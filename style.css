@@ -217,3 +217,79 @@ a:visited {
     }
 
 }
+/* =========================================================
+   PROJECT TILE FIX
+   Put this at the END of style.css
+   ========================================================= */
+
+a.project-tile {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 340px;
+
+    padding: 28px;
+
+    background-color: #151f30;
+
+    border: 1px solid #35445a;
+    border-radius: 14px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Remove hyperlink appearance from text inside tile */
+
+a.project-tile h3,
+a.project-tile p {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* Category remains blue */
+
+a.project-tile .project-category {
+    color: #37bdf8;
+    text-decoration: none;
+}
+
+
+/* Tags */
+
+a.project-tile .project-tags span {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* Repository text */
+
+a.project-tile .project-link {
+    color: #37bdf8;
+    text-decoration: none;
+}
+
+
+/* Hover */
+
+a.project-tile:hover {
+    border-color: #37bdf8;
+    background-color: #182438;
+    transform: translateY(-2px);
+}
+
+a.project-tile:hover .project-link {
+    text-decoration: underline;
+}
