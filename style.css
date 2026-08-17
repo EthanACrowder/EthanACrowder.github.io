@@ -1,152 +1,219 @@
-/* ------------------------------
-   General Page Styling
-   ------------------------------ */
-
+/* =========================================================
+   GLOBAL PAGE SETTINGS
+   ========================================================= */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
-    padding: 40px;
-
-    background-color: #0f172a;
-    color: #f1f5f9;
-
+    padding: 0;
+    background-color: #0f1728;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
-
-
-/* ------------------------------
-   Header
-   ------------------------------ */
-
-header {
+/* =========================================================
+   MAIN PAGE CONTAINER
+   ========================================================= */
+.container {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+h1 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #a9c7e8;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+.intro {
+    width: 100%;
+    max-width: 1600px;
+    margin-bottom: 40px;
+    line-height: 1.25;
+}
+/* =========================================================
+   PROJECTS SECTION
+   ========================================================= */
+.projects-section {
+    width: 100%;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
-
-header h1 {
-    margin-bottom: 5px;
-    font-size: 2.5rem;
-}
-
-header h2 {
-    margin-top: 0;
-    color: #94a3b8;
-    font-weight: normal;
-}
-
-
-/* ------------------------------
-   Project Tile
-   ------------------------------ */
-
-.project-tile {
-    display: block;
-
-    max-width: 520px;
-
-    padding: 28px;
-    margin-top: 20px;
-
-    background-color: #151f2e;
-
-    border: 1px solid #34465c;
-    border-radius: 14px;
-
-    color: #f1f5f9;
-
-    /* Removes normal hyperlink underline */
-    text-decoration: none;
-
-    /* Makes hover movement smooth */
-    transition:
-        transform 0.20s ease,
-        border-color 0.20s ease,
-        background-color 0.20s ease;
-}
-
-
-/* What happens when mouse is over tile */
-
-.project-tile:hover {
-    transform: translateY(-6px);
-
-    border-color: #38bdf8;
-
-    background-color: #1b293b;
-}
-
-
-/* ------------------------------
-   Project Category
-   ------------------------------ */
-
-.project-category {
-    margin-bottom: 12px;
-
-    color: #38bdf8;
-
-    font-size: 0.75rem;
-    font-weight: bold;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* ------------------------------
-   Project Title
-   ------------------------------ */
-
-.project-tile h3 {
-    margin-top: 0;
-    margin-bottom: 14px;
-
+.projects-section h2 {
+    margin-bottom: 18px;
+    color: #ffffff;
     font-size: 1.5rem;
 }
-
-
-/* ------------------------------
-   Project Description
-   ------------------------------ */
-
-.project-tile p {
-    color: #cbd5e1;
-
+/* =========================================================
+   PROJECT GRID
+   Desktop:
+   3 cards per row
+   ========================================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 320px;
+    padding: 28px;
+    background-color: #151f30;
+    border: 1px solid #35445a;
+    border-radius: 14px;
+}
+/* =========================================================
+   PROJECT CATEGORY
+   ========================================================= */
+.project-category {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #37bdf8;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+/* =========================================================
+   PROJECT DESCRIPTION
+   ========================================================= */
+.project-description {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #ffffff;
     line-height: 1.6;
 }
-
-
-/* ------------------------------
-   Technology Tags
-   ------------------------------ */
-
+/*
+   This also handles project paragraphs if you aren't
+   currently using the project-description class.
+*/
+.project-card > p:not(.project-category) {
+    line-height: 1.6;
+}
+/* =========================================================
+   PROJECT TAGS
+   ========================================================= */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-
     gap: 8px;
-
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
-
 .project-tags span {
-    padding: 5px 10px;
-
-    background-color: #26364a;
-
-    border-radius: 20px;
-
-    color: #cbd5e1;
-
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #24344b;
+    color: #ffffff;
+    border-radius: 15px;
     font-size: 0.8rem;
+    line-height: 1.2;
 }
-
-
-/* ------------------------------
-   Repository Link Text
-   ------------------------------ */
-
+/* =========================================================
+   PROJECT REPOSITORY LINK
+   ========================================================= */
 .project-link {
-    margin-top: 24px;
-
-    color: #38bdf8;
-
+    display: inline-block;
+    margin-top: auto;
+    color: #37bdf8;
     font-weight: bold;
+    text-decoration: none;
+}
+.project-link:hover {
+    text-decoration: underline;
+}
+/* =========================================================
+   GENERAL LINKS
+   ========================================================= */
+a {
+    color: #37bdf8;
+}
+a:visited {
+    color: #37bdf8;
+}
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   Below 1100px:
+   Change from 3 cards to 2 cards per row.
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+/* =========================================================
+   MOBILE
+   Below 700px:
+   Change to one card per row.
+   ========================================================= */
+@media screen and (max-width: 700px) {
+    .container {
+        padding: 0 15px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .project-card {
+        min-height: auto;
+        padding: 22px;
+    }
+    .project-card h3 {
+        font-size: 1.25rem;
+    }
+    .projects-section h2 {
+        font-size: 1.4rem;
+    }
+}
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 15px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .project-card {
+        padding: 18px;
+        border-radius: 10px;
+    }
+    .project-tags {
+        gap: 6px;
+    }
+    .project-tags span {
+        font-size: 0.75rem;
+    }
+
 }
